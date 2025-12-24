@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Mail } from 'lucide-react';
+import { ArrowDown, Github, Mail, Linkedin } from 'lucide-react';
 import GlitchText from './GlitchText';
 
 const XIcon = () => (
@@ -6,7 +6,6 @@ const XIcon = () => (
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
-
 const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative px-4 py-20 md:py-0">
@@ -51,7 +50,7 @@ const HeroSection = () => {
         </div>
 
         {/* Social Links */}
-        <div className="flex gap-6 justify-center">
+        <div className="flex gap-6 justify-center relative">
           <a
             href="https://github.com/Kifayath-ulla"
             target="_blank"
@@ -77,13 +76,22 @@ const HeroSection = () => {
           >
             <Mail className="w-5 h-5" />
           </a>
+          <a
+            href="https://linkedin.com/in/kifayathulla"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 border border-muted hover:border-primary text-muted-foreground hover:text-primary transition-all duration-300 hover:shadow-glow group"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+          
+          {/* Scroll indicator - centered relative to icons */}
+          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
+            <span className="font-mono text-xs tracking-widest">SCROLL</span>
+            <ArrowDown className="w-4 h-4" />
+          </div>
         </div>
-      </div>
-
-      {/* Scroll indicator - outside container for full-width centering */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
-        <span className="font-mono text-xs tracking-widest">SCROLL</span>
-        <ArrowDown className="w-4 h-4" />
       </div>
     </section>
   );
