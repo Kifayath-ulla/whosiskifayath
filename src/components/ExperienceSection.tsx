@@ -41,10 +41,10 @@ const ExperienceSection = () => {
         </div>
 
         {experiences.map((exp, index) => (
-          <div key={index} className="space-y-8">
-            <div className="grid lg:grid-cols-2 gap-8">
+          <div key={index} className="gradient-border bg-card/50 backdrop-blur-sm p-6 md:p-8 relative">
+            <div className="grid lg:grid-cols-2 gap-8 mb-8">
               {/* Left Card - Main Info */}
-              <div className="gradient-border bg-card/50 backdrop-blur-sm p-6 md:p-8 hover:shadow-glow transition-all duration-500 group relative">
+              <div className="group">
                 {/* Header */}
                 <div className="mb-6">
                   <h3 className="font-display text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
@@ -69,14 +69,10 @@ const ExperienceSection = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* Decorative corners */}
-                <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-primary/30" />
-                <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-primary/30" />
               </div>
 
               {/* Right Card - Details */}
-              <div className="gradient-border bg-card/50 backdrop-blur-sm p-6 md:p-8 hover:shadow-glow-secondary transition-all duration-500 group relative">
+              <div className="group">
                 <div className="mb-4">
                   <span className="font-mono text-xs tracking-widest text-secondary">// KEY RESPONSIBILITIES</span>
                 </div>
@@ -105,23 +101,19 @@ const ExperienceSection = () => {
                     <div className="font-mono text-xs text-muted-foreground">TEAM</div>
                   </div>
                 </div>
-
-                {/* Decorative corners */}
-                <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-secondary/30" />
-                <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-secondary/30" />
               </div>
             </div>
 
             {/* Event Photos */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="gradient-border overflow-hidden group">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-muted/30">
+              <div className="overflow-hidden group">
                 <img 
                   src={ibw1} 
                   alt="IBW 2025 Registration Desk" 
                   className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="gradient-border overflow-hidden group">
+              <div className="overflow-hidden group">
                 <img 
                   src={ibw2} 
                   alt="IBW 2025 Event Operations" 
@@ -129,6 +121,12 @@ const ExperienceSection = () => {
                 />
               </div>
             </div>
+
+            {/* Decorative corners */}
+            <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-primary/30" />
+            <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-primary/30" />
+            <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-secondary/30" />
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-secondary/30" />
           </div>
         ))}
       </div>
