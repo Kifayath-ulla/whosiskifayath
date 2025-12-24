@@ -1,5 +1,4 @@
 import { Calendar, ChevronRight, Users, Megaphone, ClipboardList, Star } from 'lucide-react';
-import profileImage from '@/assets/profile.png';
 
 const experiences = [
   {
@@ -67,54 +66,40 @@ const ExperienceSection = () => {
               <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-primary/30" />
             </div>
 
-            {/* Right Side - Image + Details */}
-            <div className="flex flex-col gap-6">
-              {/* Profile Image */}
-              <div className="flex justify-center">
-                <div className="w-48 h-48 md:w-56 md:h-56 border border-primary/50 overflow-hidden">
-                  <img
-                    src={profileImage}
-                    alt="Kifayathulla at IBW 2025"
-                    className="w-full h-full object-cover"
-                  />
+            {/* Right Card - Details */}
+            <div className="gradient-border bg-card/50 backdrop-blur-sm p-6 md:p-8 hover:shadow-glow-secondary transition-all duration-500 group relative">
+              <div className="mb-4">
+                <span className="font-mono text-xs tracking-widest text-secondary">// KEY RESPONSIBILITIES</span>
+              </div>
+
+              <ul className="space-y-4">
+                {exp.details.map((detail, i) => (
+                  <li key={i} className="flex items-start gap-3 text-muted-foreground group/item">
+                    <ChevronRight className="w-4 h-4 text-primary mt-1 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" />
+                    <span className="text-sm leading-relaxed">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Stats */}
+              <div className="mt-8 pt-6 border-t border-muted/30 grid grid-cols-3 gap-4">
+                <div className="text-center">
+                  <div className="font-display text-2xl font-bold text-primary">8</div>
+                  <div className="font-mono text-xs text-muted-foreground">DAYS</div>
+                </div>
+                <div className="text-center">
+                  <div className="font-display text-2xl font-bold text-secondary">50+</div>
+                  <div className="font-mono text-xs text-muted-foreground">VOLUNTEERS</div>
+                </div>
+                <div className="text-center">
+                  <div className="font-display text-2xl font-bold text-accent">VIP</div>
+                  <div className="font-mono text-xs text-muted-foreground">OPS LEAD</div>
                 </div>
               </div>
 
-              {/* Stats & Details Card */}
-              <div className="gradient-border bg-card/50 backdrop-blur-sm p-6 hover:shadow-glow-secondary transition-all duration-500 relative flex-1">
-                <div className="mb-4">
-                  <span className="font-mono text-xs tracking-widest text-secondary">// KEY RESPONSIBILITIES</span>
-                </div>
-
-                <ul className="space-y-3">
-                  {exp.details.map((detail, i) => (
-                    <li key={i} className="flex items-start gap-3 text-muted-foreground group/item">
-                      <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" />
-                      <span className="text-sm leading-relaxed">{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Stats */}
-                <div className="mt-6 pt-4 border-t border-muted/30 grid grid-cols-3 gap-4">
-                  <div className="text-center">
-                    <div className="font-display text-xl font-bold text-primary">8</div>
-                    <div className="font-mono text-xs text-muted-foreground">DAYS</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-display text-xl font-bold text-secondary">50+</div>
-                    <div className="font-mono text-xs text-muted-foreground">VOLUNTEERS</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-display text-xl font-bold text-accent">VIP</div>
-                    <div className="font-mono text-xs text-muted-foreground">OPS LEAD</div>
-                  </div>
-                </div>
-
-                {/* Decorative corners */}
-                <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-secondary/30" />
-                <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-secondary/30" />
-              </div>
+              {/* Decorative corners */}
+              <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-secondary/30" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-secondary/30" />
             </div>
           </div>
         ))}
