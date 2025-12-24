@@ -57,6 +57,24 @@ const ExperienceSection = () => {
                   </div>
                 </div>
 
+                {/* Event Photos */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="overflow-hidden group/img">
+                    <img 
+                      src={ibw1} 
+                      alt="IBW 2025 Registration Desk" 
+                      className="w-full h-32 md:h-40 object-cover group-hover/img:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="overflow-hidden group/img">
+                    <img 
+                      src={ibw2} 
+                      alt="IBW 2025 Event Operations" 
+                      className="w-full h-32 md:h-40 object-cover group-hover/img:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+
                 {/* Highlights with icons */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {exp.highlights.map((highlight, i) => (
@@ -101,24 +119,6 @@ const ExperienceSection = () => {
                     <div className="font-mono text-xs text-muted-foreground">TEAM</div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Event Photos */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-muted/30">
-              <div className="overflow-hidden group">
-                <img 
-                  src={ibw1} 
-                  alt="IBW 2025 Registration Desk" 
-                  className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="overflow-hidden group">
-                <img 
-                  src={ibw2} 
-                  alt="IBW 2025 Event Operations" 
-                  className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
               </div>
             </div>
 
