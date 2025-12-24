@@ -1,5 +1,11 @@
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Mail } from 'lucide-react';
 import GlitchText from './GlitchText';
+
+const XIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 const HeroSection = () => {
   return (
@@ -11,7 +17,7 @@ const HeroSection = () => {
       
       <div className="max-w-5xl mx-auto w-full text-center">
         <div className="inline-block font-mono text-xs tracking-[0.3em] text-secondary mb-4 px-4 py-2 border border-secondary/30">
-          &lt;BLOCKCHAIN_CORE/&gt;
+          &lt;WEB3_BUILDER/&gt;
         </div>
         
         <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
@@ -24,10 +30,9 @@ const HeroSection = () => {
         </h1>
 
         <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-          Mechanical Engineering student at UVCE, bridging the gap between 
-          <span className="text-primary"> mechanical precision </span> 
-          and 
-          <span className="text-secondary"> technological innovation</span>.
+          College dropout turned <span className="text-primary">Web3 enthusiast</span>. 
+          Super bullish on contributing to <span className="text-secondary">decentralized ecosystems</span> and 
+          leading <span className="text-accent">Web3 events</span> in the future.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
@@ -47,20 +52,31 @@ const HeroSection = () => {
 
         {/* Social Links */}
         <div className="flex gap-6 justify-center">
-          {[
-            { icon: Github, href: '#', label: 'GitHub' },
-            { icon: Linkedin, href: '#', label: 'LinkedIn' },
-            { icon: Mail, href: '#contact', label: 'Email' },
-          ].map(({ icon: Icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              className="p-3 border border-muted hover:border-primary text-muted-foreground hover:text-primary transition-all duration-300 hover:shadow-glow group"
-              aria-label={label}
-            >
-              <Icon className="w-5 h-5" />
-            </a>
-          ))}
+          <a
+            href="https://github.com/Kifayath-ulla"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 border border-muted hover:border-primary text-muted-foreground hover:text-primary transition-all duration-300 hover:shadow-glow group"
+            aria-label="GitHub"
+          >
+            <Github className="w-5 h-5" />
+          </a>
+          <a
+            href="https://x.com/thisiskifayath"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 border border-muted hover:border-primary text-muted-foreground hover:text-primary transition-all duration-300 hover:shadow-glow group"
+            aria-label="X"
+          >
+            <XIcon />
+          </a>
+          <a
+            href="mailto:mohammedkifayathulla07@gmail.com"
+            className="p-3 border border-muted hover:border-primary text-muted-foreground hover:text-primary transition-all duration-300 hover:shadow-glow group"
+            aria-label="Email"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
         </div>
 
         {/* Scroll indicator */}
