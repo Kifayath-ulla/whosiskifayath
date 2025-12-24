@@ -41,9 +41,9 @@ const ExperienceSection = () => {
         </div>
 
         {experiences.map((exp, index) => (
-          <div key={index} className="gradient-border bg-card/50 backdrop-blur-sm p-6 md:p-8 relative">
-            <div className="grid lg:grid-cols-2 gap-8 mb-8">
-              {/* Left Card - Main Info */}
+        <div key={index} className="gradient-border bg-card/50 backdrop-blur-sm p-6 md:p-8 relative">
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Left Column - Title, Date & Images */}
               <div className="group">
                 {/* Header */}
                 <div className="mb-6">
@@ -57,20 +57,20 @@ const ExperienceSection = () => {
                   </div>
                 </div>
 
-                {/* Event Photos */}
+                {/* Event Photos - Side by side */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="overflow-hidden group/img">
                     <img 
                       src={ibw1} 
                       alt="IBW 2025 Registration Desk" 
-                      className="w-full h-32 md:h-40 object-cover group-hover/img:scale-105 transition-transform duration-500"
+                      className="w-full h-40 md:h-48 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="overflow-hidden group/img">
                     <img 
                       src={ibw2} 
                       alt="IBW 2025 Event Operations" 
-                      className="w-full h-32 md:h-40 object-cover group-hover/img:scale-105 transition-transform duration-500"
+                      className="w-full h-40 md:h-48 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
@@ -89,7 +89,7 @@ const ExperienceSection = () => {
                 </div>
               </div>
 
-              {/* Right Card - Details */}
+              {/* Right Column - Key Responsibilities & Stats */}
               <div className="group">
                 <div className="mb-4">
                   <span className="font-mono text-xs tracking-widest text-secondary">// KEY RESPONSIBILITIES</span>
