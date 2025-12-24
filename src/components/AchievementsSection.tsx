@@ -1,4 +1,5 @@
 import { Trophy, Star, Zap, Award } from 'lucide-react';
+import profileImage from '@/assets/profile.png';
 
 const AchievementsSection = () => {
   return (
@@ -23,8 +24,23 @@ const AchievementsSection = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 blur-3xl" />
           
           <div className="relative gradient-border bg-card/30 backdrop-blur-xl p-8 md:p-12 hover:shadow-glow-accent transition-all duration-700 group">
-            {/* Trophy Icon */}
-            <div className="flex justify-center mb-8">
+            {/* Profile Image and Trophy */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              {/* Profile Image */}
+              <div className="relative">
+                <div className="w-32 h-32 md:w-40 md:h-40 gradient-border overflow-hidden">
+                  <img
+                    src={profileImage}
+                    alt="Kifayathulla"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  />
+                </div>
+                {/* Decorative corner */}
+                <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary" />
+                <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-primary" />
+              </div>
+
+              {/* Trophy Icon */}
               <div className="relative">
                 <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center border-2 border-accent animate-pulse-glow" style={{ borderRadius: '50%' }}>
                   <Trophy className="w-12 h-12 md:w-16 md:h-16 text-accent" />
