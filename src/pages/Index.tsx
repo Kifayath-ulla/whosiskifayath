@@ -1,11 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import BlockchainBackground from '@/components/BlockchainBackground';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import ExperienceSection from '@/components/ExperienceSection';
+import AchievementsSection from '@/components/AchievementsSection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background relative overflow-x-hidden">
+      {/* Animated blockchain background */}
+      <BlockchainBackground />
+      
+      {/* Gradient overlays */}
+      <div className="fixed inset-0 pointer-events-none bg-gradient-to-b from-background via-transparent to-background opacity-80" />
+      <div className="fixed inset-0 pointer-events-none bg-gradient-to-r from-background via-transparent to-background opacity-50" />
+      
+      {/* Content */}
+      <div className="relative z-10">
+        <Navigation />
+        <HeroSection />
+        <ExperienceSection />
+        <AchievementsSection />
+        <ContactSection />
+        <Footer />
       </div>
     </div>
   );
