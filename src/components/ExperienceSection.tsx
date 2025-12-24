@@ -79,6 +79,19 @@ const ExperienceSection = () => {
 
               {/* Right Column - Descriptions */}
               <div className="space-y-6">
+                {/* Highlights with icons */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {exp.highlights.map((highlight, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 p-3 bg-muted/20 border border-muted/30 hover:border-primary/50 transition-colors"
+                    >
+                      <highlight.icon className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                      <span className="text-muted-foreground text-sm">{highlight.text}</span>
+                    </div>
+                  ))}
+                </div>
+
                 {/* Key Responsibilities */}
                 <div>
                   <div className="mb-4">
@@ -93,19 +106,6 @@ const ExperienceSection = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                {/* Highlights with icons */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {exp.highlights.map((highlight, i) => (
-                    <div
-                      key={i}
-                      className="flex items-start gap-3 p-3 bg-muted/20 border border-muted/30 hover:border-primary/50 transition-colors"
-                    >
-                      <highlight.icon className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground text-sm">{highlight.text}</span>
-                    </div>
-                  ))}
                 </div>
 
                 {/* Stats */}
