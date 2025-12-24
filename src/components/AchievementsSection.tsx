@@ -38,34 +38,12 @@ const AchievementsSection = () => {
             <div className="grid lg:grid-cols-5 gap-8 items-center">
               {/* Profile Image - Large */}
               <div className="lg:col-span-2 flex justify-center">
-                <div className="relative">
-                  {/* Outer glow ring */}
-                  <div className="absolute -inset-4 border-2 border-accent/30 animate-pulse" style={{ borderRadius: '50%' }} />
-                  
-                  {/* Image container */}
-                  <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 gradient-border overflow-hidden">
-                    <img
-                      src={profileImage}
-                      alt="Kifayathulla - ALOKE 2025 Winner"
-                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                    />
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-accent/20 via-transparent to-transparent" />
-                  </div>
-                  
-                  {/* Decorative corners */}
-                  <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-primary" />
-                  <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-secondary" />
-                  <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-secondary" />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-accent" />
-
-                  {/* Floating elements */}
-                  <div className="absolute -right-6 top-1/4 animate-float">
-                    <Trophy className="w-8 h-8 text-accent" />
-                  </div>
-                  <div className="absolute -left-6 bottom-1/4 animate-float" style={{ animationDelay: '1s' }}>
-                    <Star className="w-6 h-6 text-primary" />
-                  </div>
+                <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 border border-primary/50 overflow-hidden">
+                  <img
+                    src={profileImage}
+                    alt="Kifayathulla - ALOKE 2025 Winner"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
