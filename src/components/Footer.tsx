@@ -1,4 +1,4 @@
-import { Hexagon, Github, Mail } from 'lucide-react';
+import { Hexagon, Github, Mail, Linkedin } from 'lucide-react';
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
@@ -45,6 +45,15 @@ const Footer = () => {
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />
+            </a>
+            <a
+              href="https://linkedin.com/in/kifayathulla"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-muted-foreground hover:text-primary transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
             </a>
           </div>
 

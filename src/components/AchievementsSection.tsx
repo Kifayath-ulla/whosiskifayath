@@ -1,5 +1,5 @@
 import { Trophy, Star, Zap, Award } from 'lucide-react';
-import profileImage from '@/assets/profile.png';
+import blockchainSymbol from '@/assets/blockchain-symbol.png';
 
 const AchievementsSection = () => {
   return (
@@ -7,9 +7,9 @@ const AchievementsSection = () => {
       {/* Large Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={profileImage}
+          src={blockchainSymbol}
           alt=""
-          className="w-full h-full object-cover opacity-10 grayscale"
+          className="w-full h-full object-contain opacity-5"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
@@ -86,13 +86,13 @@ const AchievementsSection = () => {
                 </div>
               </div>
 
-              {/* Right Side - Profile Image */}
+              {/* Right Side - Blockchain Symbol */}
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 border border-primary/50 overflow-hidden">
+                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 border border-primary/50 overflow-hidden flex items-center justify-center bg-card/30">
                   <img
-                    src={profileImage}
-                    alt="Kifayathulla - ALOKE 2025 Winner"
-                    className="w-full h-full object-cover"
+                    src={blockchainSymbol}
+                    alt="Blockchain Symbol"
+                    className="w-3/4 h-3/4 object-contain animate-pulse-glow"
                   />
                 </div>
               </div>
