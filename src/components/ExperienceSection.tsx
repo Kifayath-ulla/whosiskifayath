@@ -1,22 +1,25 @@
-import { Calendar, ChevronRight, Users, Megaphone, ClipboardList, Star } from 'lucide-react';
+import { Calendar, ChevronRight, Users, Megaphone, ClipboardList, Star } from "lucide-react";
 
 const experiences = [
   {
-    title: 'Core Team Volunteer & Volunteer Lead',
-    organization: 'IBW 2025',
-    date: 'Nov 26 – Dec 3, 2025',
+    title: "Core Team Volunteer & Volunteer Lead",
+    organization: "IBW 2025",
+    date: "Nov 26 – Dec 3, 2025",
     highlights: [
-      { icon: ClipboardList, text: 'Worked directly with the core team across content, operations, and tooling' },
-      { icon: Megaphone, text: 'Managed and published social media posts and content across official channels' },
-      { icon: Users, text: 'Acted as the coordination point between core team and volunteers during main conference days' },
-      { icon: Star, text: 'Managed VIP Night operations and assisted at the registration desk' },
+      { icon: ClipboardList, text: "Worked directly with the core team across content, operations, and tooling" },
+      { icon: Megaphone, text: "Managed and published social media posts and content across official channels" },
+      {
+        icon: Users,
+        text: "Acted as the coordination point between core team and volunteers during main conference days",
+      },
+      { icon: Star, text: "Managed VIP Night operations and assisted at the registration desk" },
     ],
     details: [
-      'Maintained and version-controlled event agendas on the website',
-      'Audited and reconciled form submissions across Airtable and Google Sheets',
-      'Supported on-ground operations and logistics during conference days',
-      'Assigned tasks and managed volunteer responsibilities',
-      'Ensured smooth execution across all event operations',
+      "Maintained and version-controlled event agendas on the website",
+      "Audited and reconciled form submissions across Airtable and Google Sheets",
+      "Supported on-ground operations and logistics during conference days",
+      "Assigned tasks and managed volunteer responsibilities",
+      "Ensured smooth execution across all event operations",
     ],
   },
 ];
@@ -54,7 +57,10 @@ const ExperienceSection = () => {
               {/* Highlights with icons */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {exp.highlights.map((highlight, i) => (
-                  <div key={i} className="flex items-start gap-3 p-3 bg-muted/20 border border-muted/30 hover:border-primary/50 transition-colors">
+                  <div
+                    key={i}
+                    className="flex items-start gap-3 p-3 bg-muted/20 border border-muted/30 hover:border-primary/50 transition-colors"
+                  >
                     <highlight.icon className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <span className="text-muted-foreground text-sm">{highlight.text}</span>
                   </div>
@@ -88,7 +94,7 @@ const ExperienceSection = () => {
                   <div className="font-mono text-xs text-muted-foreground">DAYS</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-display text-2xl font-bold text-secondary">50+</div>
+                  <div className="font-display text-2xl font-bold text-secondary">75+</div>
                   <div className="font-mono text-xs text-muted-foreground">VOLUNTEERS</div>
                 </div>
                 <div className="text-center">
