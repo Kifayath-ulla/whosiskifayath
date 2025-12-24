@@ -50,7 +50,7 @@ const HeroSection = () => {
         </div>
 
         {/* Social Links */}
-        <div className="flex gap-6 justify-center relative">
+        <div className="flex gap-6 justify-center">
           <a
             href="https://github.com/Kifayath-ulla"
             target="_blank"
@@ -85,12 +85,12 @@ const HeroSection = () => {
           >
             <Linkedin className="w-5 h-5" />
           </a>
-          
-          {/* Scroll indicator - centered relative to icons */}
-          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
-            <span className="font-mono text-xs tracking-widest">SCROLL</span>
-            <ArrowDown className="w-4 h-4" />
-          </div>
+        </div>
+        
+        {/* Scroll indicator - centered between X and Gmail icons */}
+        <div className="mt-16 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
+          <span className="font-mono text-xs tracking-widest">SCROLL</span>
+          <ArrowDown className="w-4 h-4" />
         </div>
       </div>
     </section>
