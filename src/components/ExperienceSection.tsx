@@ -42,79 +42,86 @@ const ExperienceSection = () => {
 
         {experiences.map((exp, index) => (
           <div key={index} className="gradient-border bg-card/50 backdrop-blur-sm p-6 md:p-8 relative">
-            <div className="max-w-3xl">
-              {/* Header */}
-              <div className="mb-6">
-                <h3 className="font-display text-xl md:text-2xl font-bold text-foreground hover:text-primary transition-colors">
-                  {exp.title}
-                </h3>
-                <p className="text-secondary font-mono text-lg mt-2">{exp.organization}</p>
-                <div className="flex items-center gap-2 mt-3 text-muted-foreground">
-                  <Calendar className="w-4 h-4 text-primary" />
-                  <span className="font-mono text-sm">{exp.date}</span>
-                </div>
-              </div>
-
-              {/* Event Photos - Stacked vertically */}
-              <div className="space-y-4 mb-8">
-                <div className="overflow-hidden group/img">
-                  <img 
-                    src={ibw1} 
-                    alt="IBW 2025 Registration Desk" 
-                    className="w-full max-w-md h-48 md:h-56 object-cover group-hover/img:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="overflow-hidden group/img">
-                  <img 
-                    src={ibw2} 
-                    alt="IBW 2025 Event Operations" 
-                    className="w-full max-w-md h-48 md:h-56 object-cover group-hover/img:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-
-              {/* Key Responsibilities */}
-              <div className="mb-8">
-                <div className="mb-4">
-                  <span className="font-mono text-xs tracking-widest text-secondary">// KEY RESPONSIBILITIES</span>
-                </div>
-
-                <ul className="space-y-4">
-                  {exp.details.map((detail, i) => (
-                    <li key={i} className="flex items-start gap-3 text-muted-foreground group/item">
-                      <ChevronRight className="w-4 h-4 text-primary mt-1 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" />
-                      <span className="text-sm leading-relaxed">{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Highlights with icons */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                {exp.highlights.map((highlight, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-3 p-3 bg-muted/20 border border-muted/30 hover:border-primary/50 transition-colors"
-                  >
-                    <highlight.icon className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground text-sm">{highlight.text}</span>
+            {/* Two-column layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Left Column - Header and Images */}
+              <div className="space-y-6">
+                {/* Header */}
+                <div>
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-foreground hover:text-primary transition-colors">
+                    {exp.title}
+                  </h3>
+                  <p className="text-secondary font-mono text-lg mt-2">{exp.organization}</p>
+                  <div className="flex items-center gap-2 mt-3 text-muted-foreground">
+                    <Calendar className="w-4 h-4 text-primary" />
+                    <span className="font-mono text-sm">{exp.date}</span>
                   </div>
-                ))}
+                </div>
+
+                {/* Event Photos */}
+                <div className="space-y-4">
+                  <div className="overflow-hidden group/img">
+                    <img 
+                      src={ibw1} 
+                      alt="IBW 2025 Registration Desk" 
+                      className="w-full h-48 md:h-56 object-cover group-hover/img:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="overflow-hidden group/img">
+                    <img 
+                      src={ibw2} 
+                      alt="IBW 2025 Event Operations" 
+                      className="w-full h-48 md:h-56 object-cover group-hover/img:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
               </div>
 
-              {/* Stats */}
-              <div className="pt-6 border-t border-muted/30 grid grid-cols-3 gap-4 max-w-md">
-                <div className="text-center">
-                  <div className="font-display text-2xl font-bold text-primary">8</div>
-                  <div className="font-mono text-xs text-muted-foreground">DAYS</div>
+              {/* Right Column - Descriptions */}
+              <div className="space-y-6">
+                {/* Key Responsibilities */}
+                <div>
+                  <div className="mb-4">
+                    <span className="font-mono text-xs tracking-widest text-secondary">// KEY RESPONSIBILITIES</span>
+                  </div>
+
+                  <ul className="space-y-4">
+                    {exp.details.map((detail, i) => (
+                      <li key={i} className="flex items-start gap-3 text-muted-foreground group/item">
+                        <ChevronRight className="w-4 h-4 text-primary mt-1 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" />
+                        <span className="text-sm leading-relaxed">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="text-center">
-                  <div className="font-display text-2xl font-bold text-secondary">75+</div>
-                  <div className="font-mono text-xs text-muted-foreground">VOLUNTEERS</div>
+
+                {/* Highlights with icons */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {exp.highlights.map((highlight, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 p-3 bg-muted/20 border border-muted/30 hover:border-primary/50 transition-colors"
+                    >
+                      <highlight.icon className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                      <span className="text-muted-foreground text-sm">{highlight.text}</span>
+                    </div>
+                  ))}
                 </div>
-                <div className="text-center">
-                  <div className="font-display text-2xl font-bold text-accent">CORE</div>
-                  <div className="font-mono text-xs text-muted-foreground">TEAM</div>
+
+                {/* Stats */}
+                <div className="pt-6 border-t border-muted/30 grid grid-cols-3 gap-4">
+                  <div className="text-center">
+                    <div className="font-display text-2xl font-bold text-primary">8</div>
+                    <div className="font-mono text-xs text-muted-foreground">DAYS</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-display text-2xl font-bold text-secondary">75+</div>
+                    <div className="font-mono text-xs text-muted-foreground">VOLUNTEERS</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-display text-2xl font-bold text-accent">CORE</div>
+                    <div className="font-mono text-xs text-muted-foreground">TEAM</div>
+                  </div>
                 </div>
               </div>
             </div>
