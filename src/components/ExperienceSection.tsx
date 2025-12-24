@@ -1,18 +1,22 @@
-import { Calendar, MapPin, ChevronRight } from 'lucide-react';
+import { Calendar, ChevronRight, Users, Megaphone, ClipboardList, Star } from 'lucide-react';
 
 const experiences = [
   {
     title: 'Core Team Volunteer & Volunteer Lead',
     organization: 'IBW 2025',
     date: 'Nov 26 – Dec 3, 2025',
-    points: [
-      'Worked directly with the core team across content, operations, and tooling',
-      'Maintained and version-controlled event agendas on the website, while auditing and reconciling form submissions across Airtable and Google Sheets',
-      'Managed and published social media posts and content across official channels',
+    highlights: [
+      { icon: ClipboardList, text: 'Worked directly with the core team across content, operations, and tooling' },
+      { icon: Megaphone, text: 'Managed and published social media posts and content across official channels' },
+      { icon: Users, text: 'Acted as the coordination point between core team and volunteers during main conference days' },
+      { icon: Star, text: 'Managed VIP Night operations and assisted at the registration desk' },
+    ],
+    details: [
+      'Maintained and version-controlled event agendas on the website',
+      'Audited and reconciled form submissions across Airtable and Google Sheets',
       'Supported on-ground operations and logistics during conference days',
-      'Managed VIP Night operations and assisted at the registration desk',
       'Assigned tasks and managed volunteer responsibilities',
-      'Acted as the coordination point between the core team and volunteers during the main conference days',
+      'Ensured smooth execution across all event operations',
     ],
   },
 ];
@@ -31,53 +35,74 @@ const ExperienceSection = () => {
           </h2>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-accent" />
-
-          {experiences.map((exp, index) => (
-            <div key={index} className="relative grid md:grid-cols-2 gap-8 mb-12">
-              {/* Timeline dot */}
-              <div className="absolute left-0 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary shadow-glow border-2 border-background" />
-
-              {/* Card */}
-              <div className={`ml-8 md:ml-0 ${index % 2 === 0 ? 'md:pr-12' : 'md:col-start-2 md:pl-12'}`}>
-                <div className="gradient-border bg-card/50 backdrop-blur-sm p-6 hover:shadow-glow transition-all duration-500 group">
-                  {/* Header */}
-                  <div className="mb-4">
-                    <h3 className="font-display text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {exp.title}
-                    </h3>
-                    <p className="text-secondary font-mono text-sm mt-1">{exp.organization}</p>
-                  </div>
-
-                  {/* Meta */}
-                  <div className="flex flex-wrap gap-4 mb-4 text-muted-foreground text-sm">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-primary" />
-                      <span className="font-mono">{exp.date}</span>
-                    </div>
-                  </div>
-
-                  {/* Points */}
-                  <ul className="space-y-3">
-                    {exp.points.map((point, i) => (
-                      <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
-                        <ChevronRight className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Decorative corner */}
-                  <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-primary/30" />
-                  <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-primary/30" />
+        {experiences.map((exp, index) => (
+          <div key={index} className="grid lg:grid-cols-2 gap-8">
+            {/* Left Card - Main Info */}
+            <div className="gradient-border bg-card/50 backdrop-blur-sm p-6 md:p-8 hover:shadow-glow transition-all duration-500 group relative">
+              {/* Header */}
+              <div className="mb-6">
+                <h3 className="font-display text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  {exp.title}
+                </h3>
+                <p className="text-secondary font-mono text-lg mt-2">{exp.organization}</p>
+                <div className="flex items-center gap-2 mt-3 text-muted-foreground">
+                  <Calendar className="w-4 h-4 text-primary" />
+                  <span className="font-mono text-sm">{exp.date}</span>
                 </div>
               </div>
+
+              {/* Highlights with icons */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {exp.highlights.map((highlight, i) => (
+                  <div key={i} className="flex items-start gap-3 p-3 bg-muted/20 border border-muted/30 hover:border-primary/50 transition-colors">
+                    <highlight.icon className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm">{highlight.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Decorative corners */}
+              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-primary/30" />
+              <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-primary/30" />
             </div>
-          ))}
-        </div>
+
+            {/* Right Card - Details */}
+            <div className="gradient-border bg-card/50 backdrop-blur-sm p-6 md:p-8 hover:shadow-glow-secondary transition-all duration-500 group relative">
+              <div className="mb-4">
+                <span className="font-mono text-xs tracking-widest text-secondary">// KEY RESPONSIBILITIES</span>
+              </div>
+
+              <ul className="space-y-4">
+                {exp.details.map((detail, i) => (
+                  <li key={i} className="flex items-start gap-3 text-muted-foreground group/item">
+                    <ChevronRight className="w-4 h-4 text-primary mt-1 flex-shrink-0 group-hover/item:translate-x-1 transition-transform" />
+                    <span className="text-sm leading-relaxed">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Stats */}
+              <div className="mt-8 pt-6 border-t border-muted/30 grid grid-cols-3 gap-4">
+                <div className="text-center">
+                  <div className="font-display text-2xl font-bold text-primary">8</div>
+                  <div className="font-mono text-xs text-muted-foreground">DAYS</div>
+                </div>
+                <div className="text-center">
+                  <div className="font-display text-2xl font-bold text-secondary">50+</div>
+                  <div className="font-mono text-xs text-muted-foreground">VOLUNTEERS</div>
+                </div>
+                <div className="text-center">
+                  <div className="font-display text-2xl font-bold text-accent">VIP</div>
+                  <div className="font-mono text-xs text-muted-foreground">OPS LEAD</div>
+                </div>
+              </div>
+
+              {/* Decorative corners */}
+              <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-secondary/30" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-secondary/30" />
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
