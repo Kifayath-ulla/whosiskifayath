@@ -35,20 +35,9 @@ const AchievementsSection = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 blur-3xl" />
           
           <div className="relative gradient-border bg-card/60 backdrop-blur-xl p-6 md:p-10 hover:shadow-glow-accent transition-all duration-700 group">
-            <div className="grid lg:grid-cols-5 gap-8 items-center">
-              {/* Profile Image - Large */}
-              <div className="lg:col-span-2 flex justify-center">
-                <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 border border-primary/50 overflow-hidden">
-                  <img
-                    src={profileImage}
-                    alt="Kifayathulla - ALOKE 2025 Winner"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="lg:col-span-3">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              {/* Left Side - Content */}
+              <div className="order-2 lg:order-1">
                 {/* Badge */}
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/30">
@@ -94,6 +83,17 @@ const AchievementsSection = () => {
                       <div className="font-mono text-xs text-muted-foreground tracking-wider">{stat.label}</div>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Right Side - Profile Image */}
+              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 border border-primary/50 overflow-hidden">
+                  <img
+                    src={profileImage}
+                    alt="Kifayathulla - ALOKE 2025 Winner"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
