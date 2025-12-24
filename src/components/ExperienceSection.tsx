@@ -98,8 +98,8 @@ const ExperienceSection = () => {
                   <div className="font-mono text-xs text-muted-foreground">VOLUNTEERS</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-display text-2xl font-bold text-accent">VIP</div>
-                  <div className="font-mono text-xs text-muted-foreground">OPS LEAD</div>
+                  <div className="font-display text-2xl font-bold text-accent">CORE</div>
+                  <div className="font-mono text-xs text-muted-foreground">TEAM</div>
                 </div>
               </div>
 
