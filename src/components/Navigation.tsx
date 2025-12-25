@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import { Menu, X, Hexagon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { useState } from "react";
+import { Menu, X, Hexagon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'HOME', href: '#home' },
-    { label: 'EXPERIENCE', href: '#experience' },
-    { label: 'ACHIEVEMENTS', href: '#achievements' },
-    { label: 'CONTACT', href: '#contact' },
+    { label: "HOME", href: "#home" },
+    { label: "EXPERIENCE", href: "#experience" },
+    { label: "ACHIEVEMENTS", href: "#achievements" },
+    { label: "CONTACT", href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
@@ -25,15 +25,16 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto">
         <div className="gradient-border backdrop-blur-xl bg-card/80 px-6 py-3 flex items-center justify-between">
           {/* Logo */}
-          <a 
-            href="#home" 
-            onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("#home");
+            }}
             className="flex items-center gap-2 group"
           >
             <Hexagon className="w-8 h-8 text-primary animate-pulse-glow" />
-            <span className="font-display font-bold text-lg tracking-wider text-primary">
-              CORE
-            </span>
+            <span className="font-display font-bold text-lg tracking-wider text-primary"></span>
           </a>
 
           {/* Desktop Nav */}
@@ -42,7 +43,10 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
                 className="relative font-mono text-sm tracking-widest text-muted-foreground hover:text-primary transition-colors group"
               >
                 <span className="relative z-10">{item.label}</span>
@@ -64,7 +68,7 @@ const Navigation = () => {
         <div
           className={cn(
             "md:hidden absolute top-full left-4 right-4 mt-2 gradient-border backdrop-blur-xl bg-card/95 overflow-hidden transition-all duration-300",
-            isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+            isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0",
           )}
         >
           <div className="p-4 space-y-4">
@@ -72,7 +76,10 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
                 className="block font-mono text-sm tracking-widest text-muted-foreground hover:text-primary transition-colors py-2"
               >
                 {item.label}
