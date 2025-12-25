@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Hexagon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import blockchainSymbol from "@/assets/blockchain-symbol.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +33,7 @@ const Navigation = () => {
             }}
             className="flex items-center gap-2 group"
           >
-            <img src={blockchainSymbol} alt="Logo" className="w-8 h-8 animate-pulse-glow" />
+            <Hexagon className="w-8 h-8 text-primary animate-pulse-glow" />
             <span className="font-display font-bold text-lg tracking-wider text-primary"></span>
           </a>
 
